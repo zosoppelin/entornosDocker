@@ -1,0 +1,10 @@
+FROM alpine:3.7
+ENV DEBIAN_FRONTEND noninteractive
+# Repositorio para poder instalar php7.1
+ENV TZ=Europe/Madrid
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Actualización de sistema e instalación de paquetes
+RUN apk add --update \
+    git \
+    nodejs
